@@ -1,7 +1,8 @@
-package net.hcfactions.bigbrother;
+package net.hcfactions.bigbrother.blocklogging;
 
-import net.hcfactions.bigbrother.events.EventManager;
-import net.hcfactions.bigbrother.model.*;
+import net.hcfactions.bigbrother.BigBrotherPlugin;
+import net.hcfactions.bigbrother.blocklogging.events.EventManager;
+import net.hcfactions.bigbrother.blocklogging.model.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -12,14 +13,12 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 
 import java.sql.SQLException;
 
-public class BlockChangeListener implements Listener {
+public class BlockEventListener implements Listener {
     private BigBrotherPlugin plugin;
-    private DbHelper db;
 
-    public BlockChangeListener(BigBrotherPlugin plugin)
+    public BlockEventListener(BigBrotherPlugin plugin)
     {
         this.plugin = plugin;
-        this.db = new DbHelper(plugin);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
@@ -32,16 +31,9 @@ public class BlockChangeListener implements Listener {
         if(event.getPlayer() == null)
             return;
 
-        try
-        {
-            BlockChange record = (BlockChange) EventManager.createRecord(event);
-            if(record != null)
-                db.savePlacedBlock(record);
-        }
-        catch(SQLException ex) {
-            plugin.getLogger().warning(ex.getMessage());
-        }
-
+        BlockChange record = (BlockChange) EventManager.createRecord(event);
+        if(record != null)
+            plugin.getBlockDbHelper().savePlacedBlock(record);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
@@ -54,17 +46,10 @@ public class BlockChangeListener implements Listener {
         if(event.getPlayer() == null)
             return;
 
-        try
-        {
-            BlockChange record = (BlockChange)EventManager.createRecord(event);
+        BlockChange record = (BlockChange)EventManager.createRecord(event);
 
-            if(record != null)
-                db.saveDestroyedBlock(record);
-        }
-        catch(SQLException ex) {
-
-            plugin.getLogger().warning(ex.getMessage());
-        }
+        if(record != null)
+            plugin.getBlockDbHelper().saveDestroyedBlock(record);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
@@ -77,16 +62,11 @@ public class BlockChangeListener implements Listener {
         if(event.getPlayer() == null)
             return;
 
-        try
-        {
-            BlockChange record = (BlockChange)EventManager.createRecord(event);
+        BlockChange record = (BlockChange)EventManager.createRecord(event);
 
-            if(record != null)
-                db.savePlacedBlock(record);
-        }
-        catch(SQLException ex) {
-            plugin.getLogger().warning(ex.getMessage());
-        }
+        if(record != null)
+            plugin.getBlockDbHelper().savePlacedBlock(record);
+
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
@@ -98,17 +78,10 @@ public class BlockChangeListener implements Listener {
         if(event.getPlayer() == null || event.getInventory() == null)
             return;
 
-        try
-        {
-            ChestInventoryOpen record = (ChestInventoryOpen)EventManager.createRecord(event);
+        ChestInventoryOpen record = (ChestInventoryOpen)EventManager.createRecord(event);
 
-            if(record != null)
-                db.saveChestAccess(record);
-
-        }
-        catch(SQLException ex) {
-            plugin.getLogger().warning(ex.getMessage());
-        }
+        if(record != null)
+            plugin.getBlockDbHelper().saveChestAccess(record);
     }
 
 

@@ -1,37 +1,3 @@
-name: BigBrother
+name: BigBrotherPlugin
 main: net.hcfactions.bigbrother.BigBrotherPlugin
 version: 0.1.0
-
-commands:
-    bb:
-        description: BigBrother
-        usage: Type "/bb help [subcommand]" for more information
-
-permissions:
-    # All permissions should begin with the plugin "name" (converted to lower case)
-    bigbrother.*:
-        description: Gives access to all BigBrother commands
-        children:
-            bigbrother.config: true
-            bigbrother.queuewarnings: true
-            bigbrother.playtime.*: true
-
-    # Required base permission
-    bigbrother.config:
-        description: Change configuration options via commands
-        default: op
-    # Required base permission
-    bigbrother.queuewarnings:
-        description: Receive queue limit warning messages
-        default: op
-    bigbrother.playtime.*:
-        description: Player can check total play times
-        children:
-            bigbrother.playtime.self: true
-            bigbrother.playtime.others: true
-    bigbrother.playtime.self:
-        description: View own total play time
-        default: op
-    bigbrother.playtime.others:
-        description: View others' total play time
-        default: op

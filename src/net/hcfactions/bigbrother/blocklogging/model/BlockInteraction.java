@@ -1,4 +1,4 @@
-package net.hcfactions.bigbrother.model;
+package net.hcfactions.bigbrother.blocklogging.model;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;

@@ -5,7 +5,6 @@
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
       <element id="file-copy" path="$PROJECT_DIR$/dbconfig.yaml" />
       <element id="module-output" name="bigbrother" />
-      <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
     </root>
   </artifact>
 </component>

@@ -1,6 +1,6 @@
-package net.hcfactions.bigbrother.events;
+package net.hcfactions.bigbrother.blocklogging.events;
 
-import net.hcfactions.bigbrother.model.BlockInteraction;
+import net.hcfactions.bigbrother.blocklogging.model.BlockInteraction;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryEvent;
 import org.bukkit.inventory.InventoryHolder;

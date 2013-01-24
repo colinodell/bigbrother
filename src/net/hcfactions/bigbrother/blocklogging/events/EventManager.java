@@ -1,9 +1,9 @@
-package net.hcfactions.bigbrother.events;
+package net.hcfactions.bigbrother.blocklogging.events;
 
-import net.hcfactions.bigbrother.model.BlockInteraction;
-import net.hcfactions.bigbrother.model.ChestBlockChange;
-import net.hcfactions.bigbrother.model.ChestInventoryOpen;
-import net.hcfactions.bigbrother.model.SignBlockChange;
+import net.hcfactions.bigbrother.blocklogging.model.BlockInteraction;
+import net.hcfactions.bigbrother.blocklogging.model.ChestBlockChange;
+import net.hcfactions.bigbrother.blocklogging.model.ChestInventoryOpen;
+import net.hcfactions.bigbrother.blocklogging.model.SignBlockChange;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.block.DoubleChest;
