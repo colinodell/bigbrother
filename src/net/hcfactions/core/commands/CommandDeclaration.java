@@ -50,7 +50,7 @@ public class CommandDeclaration {
         }
         catch(Exception ex) {
             sender.sendMessage(ChatColor.RED + "Failed to create instance of command: " + ChatColor.GOLD + StringUtils.join(name, " "));
-            plugin.getLogger().logException(ex);
+            plugin.getELogger().logException(ex);
         }
 
         return cmd;

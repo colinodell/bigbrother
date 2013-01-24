@@ -69,17 +69,17 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
 
             // Execute any remaining actions before we shut down
             getDatabaseQueue().runAll();
-            getLogger().info("Completed execution of any queued actions remaining");
+            getELogger().info("Completed execution of any queued actions remaining");
 
             // Close the db connection
             getConnection().close();
             this.dbconn = null;
-            getLogger().info("Closed MySQL connection");
+            getELogger().info("Closed MySQL connection");
         }
         catch (SQLException ex)
         {
-            getLogger().warning("Failed to close MySQL connection");
-            getLogger().logException(ex);
+            getELogger().warning("Failed to close MySQL connection");
+            getELogger().logException(ex);
         }
     }
 
@@ -112,7 +112,7 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
     {
         if(this.dbQueue == null)
         {
-            this.dbQueue = new MonitoredBackgroundQueue<IDatabaseAction, Connection>(getConnection(), getLogger(), "dbqueue") {
+            this.dbQueue = new MonitoredBackgroundQueue<IDatabaseAction, Connection>(getConnection(), getELogger(), "dbqueue") {
                 @Override
                 public boolean onMonitorAlarm(int level) {
                     if(level == WARNING)
@@ -157,7 +157,7 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
                 this.dbconn = MySQLProvider.getConnection();
             }
             catch (SQLException ex) {
-                getLogger().logException(ex);
+                getELogger().logException(ex);
             }
         }
         return this.dbconn;
@@ -169,7 +169,7 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
     {
         if(this.cmdManager == null)
         {
-            this.cmdManager = new BaseCommandManager(this, getLogger()) {
+            this.cmdManager = new BaseCommandManager(this, getELogger()) {
                 @Override
                 public void onInit() {
                     this.register(new PermissionCommandDeclaration(CmdConfig.class, getBaseCommandPrefix(), "*.config", "config", "conf"));
@@ -194,8 +194,7 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
     }
 
     // Get a custom logger instead of the built-in one
-    @Override
-    public EnhancedLogger getLogger()
+    public EnhancedLogger getELogger()
     {
         if(this.logger == null)
         {
@@ -220,10 +219,10 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
 
             this.getConfig().load(this.configFile);
             this.getConfig().options().copyDefaults(true);
-            getLogger().info("Loaded configuration");
+            getELogger().info("Loaded configuration");
         } catch (Exception e) {
-            getLogger().severe("Failed to load configuration");
-            getLogger().logException(e);
+            getELogger().severe("Failed to load configuration");
+            getELogger().logException(e);
         }
     }
 

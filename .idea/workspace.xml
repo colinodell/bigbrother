@@ -3,19 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d4b0ddae-b876-4d0f-90e2-d8deb95d88a5" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/EventDeclaration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/BlockEventDeclaration.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/EventManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/BlockEventDeclaration.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/InventoryEventDeclaration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestInventoryOpen.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestInventoryOpen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockInteraction.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockInteraction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockChange.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockChange.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockAccess.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/bigbrother.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/bigbrother.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestBlockChange.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestBlockChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/BigBrother.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/BigBrother.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockChange.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestInventoryOpen.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestInventoryOpen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/SignBlockChange.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/SignBlockChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestBlockChange.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/ChestBlockChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockInteraction.java" afterPath="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockInteraction.java" />
     </list>
     <ignored path="bigbrother.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -46,6 +46,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -61,6 +62,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -70,27 +72,20 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="bigbrother" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerDbHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/PlayerDbHelper.java">
+      <file leaf-file-name="BasePlugin.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/BasePlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TablePlayerLog.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/TablePlayerLog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="151" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.029929578">
+            <state line="214" column="66" selection-start="7900" selection-end="7900" vertical-scroll-proportion="0.026645768">
               <folding />
             </state>
           </provider>
@@ -109,22 +104,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/InventoryEventDeclaration.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/InventoryResultRemovalEventDeclaration.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/BlockEventDeclaration.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockInteraction.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/OreEventListener.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/OreMinedEventDeclaration.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockDbHelper.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/OreBreak.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/util/LogUtils.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/util/ChatUtils.java" />
         <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/EventManager.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/TableOres.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/DropRecorder.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/PlayerItemStack.java" />
-        <option value="$PROJECT_DIR$/src/net/hcfactions/core/BasePlugin.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/util/FuzzyTime.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/PlayerDbHelper.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/commands/BaseCommand.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/threading/BackgroundQueue.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/threading/MonitoredBackgroundQueue.java" />
         <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/TablePlayerLog.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/commands/CommandDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/bigbrother/commands/CmdPlaytime.java" />
+        <option value="$PROJECT_DIR$/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/commands/BaseCommandManager.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/log/EnhancedLogger.java" />
+        <option value="$PROJECT_DIR$/src/net/hcfactions/core/BasePlugin.java" />
       </list>
     </option>
   </component>
@@ -132,10 +127,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="y" value="1" />
+    <option name="width" value="2467" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -185,6 +179,20 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bigbrother" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigBrother" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -209,7 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
+              <option name="myItemId" value="BigBrother" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,7 +227,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
+              <option name="myItemId" value="BigBrother" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -241,7 +249,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
+              <option name="myItemId" value="BigBrother" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -263,7 +271,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
+              <option name="myItemId" value="BigBrother" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -289,138 +297,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
+              <option name="myItemId" value="BigBrother" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hcfactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hcfactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocklogging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hcfactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocklogging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hcfactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocklogging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="events" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigbrother" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -440,8 +322,8 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -460,12 +342,7 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -473,11 +350,20 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
@@ -504,30 +390,7 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" />
@@ -541,12 +404,7 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="" />
@@ -566,12 +424,7 @@
       </option>
       <envs />
       <patterns />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -607,27 +460,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="1" width="2467" height="832" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289183" sideWeight="0.5130946" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29609835" sideWeight="0.32671082" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29609835" sideWeight="0.32671082" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289183" sideWeight="0.48316407" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29609835" sideWeight="0.33222958" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29609835" sideWeight="0.33222958" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997862" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.202031" sideWeight="0.67108166" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32307693" sideWeight="0.6711111" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.48957777" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959914" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -654,7 +507,6 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
@@ -664,9 +516,11 @@
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
@@ -691,100 +545,92 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockDbHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/commands/CommandDeclaration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="53" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+        <state line="18" column="10" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/commands/CmdPlaytime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="77" selection-start="2592" selection-end="2592" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/commands/BaseCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="101" selection-start="1863" selection-end="1952" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/commands/BaseCommandManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="64" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/commands/IRequiresPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="21" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/commands/PermissionCommandDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="58" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/config/CmdConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="387" selection-end="387" vertical-scroll-proportion="0.07736064" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="79" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/TablePlayerLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="71" selection-start="10705" selection-end="10705" vertical-scroll-proportion="0.6437588" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/TableServerLastSeen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.09537167" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/log/EnhancedLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/sql/MySQLProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="45" selection-start="587" selection-end="587" vertical-scroll-proportion="0.4439324">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/PlayerEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/BlockEventDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="92" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/EventDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/TableOres.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="68" selection-start="117" selection-end="117" vertical-scroll-proportion="0.060822897" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/DropRecorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="68" selection-start="233" selection-end="233" vertical-scroll-proportion="0.11703958">
-          <folding>
-            <element signature="e#644#657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/PlayerItemStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="224" selection-end="224" vertical-scroll-proportion="0.17555939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/BasePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-6.7042255">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="9" column="13" selection-start="322" selection-end="322" vertical-scroll-proportion="0.10445469">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/BigBrotherPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="84" selection-start="1756" selection-end="1756" vertical-scroll-proportion="1.1118761">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/BlockChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.20481928" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/EventManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="77" selection-start="2039" selection-end="2039" vertical-scroll-proportion="0.8080986" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/events/OreMinedEventDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.52667814" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/BlockEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="61" selection-start="2275" selection-end="2275" vertical-scroll-proportion="1.3166953" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/blocklogging/model/OreBreak.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="46" selection-start="432" selection-end="432" vertical-scroll-proportion="0.55593807" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/PlayerDbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
+        <state line="52" column="91" selection-start="2190" selection-end="2190" vertical-scroll-proportion="1.1490015">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/bigbrother/playerlogging/TablePlayerLog.java">
+    <entry file="file://$PROJECT_DIR$/src/net/hcfactions/core/BasePlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="151" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.029929578">
+        <state line="214" column="66" selection-start="7900" selection-end="7900" vertical-scroll-proportion="0.026645768">
           <folding />
         </state>
       </provider>
@@ -795,7 +641,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>bigbrother</last-edited>
+          <last-edited>BigBrother</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -820,6 +666,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Common</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -843,11 +690,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>bigbrother</last-edited>
+          <last-edited>BigBrother</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

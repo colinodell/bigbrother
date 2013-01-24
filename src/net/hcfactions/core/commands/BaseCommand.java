@@ -67,7 +67,7 @@ public abstract class BaseCommand implements Runnable {
         } catch (Exception ex) {
             getSender().sendMessage(ChatColor.RED + "An unknown error occurred");
 
-            getPlugin().getLogger().logException(ex);
+            getPlugin().getELogger().logException(ex);
         }
     }
 
