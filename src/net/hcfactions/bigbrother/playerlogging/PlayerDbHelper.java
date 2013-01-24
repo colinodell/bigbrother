@@ -1,60 +1,62 @@
 package net.hcfactions.bigbrother.playerlogging;
 
-import net.hcfactions.bigbrother.playerlogging.actions.*;
-import net.hcfactions.bigbrother.sql.QueuedDatabaseRunnable;
+import net.hcfactions.core.sql.DbHelper;
+import net.hcfactions.core.sql.action.IDatabaseAction;
+import net.hcfactions.core.threading.BackgroundQueue;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Logger;
 
-public class PlayerDbHelper extends QueuedDatabaseRunnable {
-    public static final int STATUS_ACTIVE = 0;
-    public static final int STATUS_QUEUED = 1;
-    public static final int STATUS_PROCESSED = 2;
+/**
+ * Handles logic for creating player-related tables and queueing queries
+ * This class sits between the event listener and the tables/queries/queue
+ */
+public class PlayerDbHelper extends DbHelper {
 
-    public PlayerDbHelper(Connection conn, Logger log)
+    public PlayerDbHelper(BackgroundQueue q)
     {
-        super(conn, log);
-        this.enqueue(new CreateTablesAction());
-    }
-
-    public void recordLogin(String playerName, String ip)
-    {
-        // Just in case we haven't marked their previous log for processing, do that now
-        // I doubt it will happen, but you never know...
-        this.enqueue(new QueueRecordsAction(playerName));
-        this.enqueue(new RecordLoginAction(playerName, ip));
-    }
-    public void recordLogin(String playerName, InetAddress addr)
-    {
-        this.recordLogin(playerName, addr.getHostAddress());
-    }
-    public void recordLogin(String playerName, InetSocketAddress addr) {
-        this.recordLogin(playerName, addr.getAddress());
-    }
-
-    public void recordLogout(String playerName) {
-        // Update the existing _time record with the logout time and mark it as queued
-        this.enqueue(new RecordLogoutAction(playerName));
-
-        // Queue record
-        this.enqueue(new QueueRecordsAction(playerName));
-    }
-
-    public void processQueuedRecords() {
-        this.enqueue(new ProcessQueuedRecordsAction());
+        super(q);
+        getDb().enqueue(new IDatabaseAction() {
+            @Override
+            public void execute(Connection conn) throws SQLException {
+                Statement stmt = conn.createStatement();
+                stmt.execute(TablePlayerLog.CREATE_TABLE);
+                stmt.execute(TablePlayerLog.CREATE_TABLE_TIME);
+                stmt.execute(TableServerLastSeen.CREATE_TABLE);
+            }
+        });
     }
 
     /**
-     * Queues and processes all pending records.
+     * Record the player logging in
+     * @param player The player who logged in
+     */
+    public void recordLogin(Player player)
+    {
+        getDb().enqueue(new TablePlayerLog.RecordLoginAction(player.getName(), player.getAddress().getAddress().getHostAddress()));
+    }
+
+    /**
+     * Record the player logging out and immediately update their total play time
+     * @param player The player who logged out
+     */
+    public void recordLogout(Player player) {
+        // Update the existing _time record with the logout time to mark it as queued
+        getDb().enqueue(new TablePlayerLog.RecordLogoutAction(player.getName()));
+
+        // Process record immediately
+        getDb().enqueue(new TablePlayerLog.ProcessPlayerQueuedRecordsAction(player.getName()));
+    }
+
+    /**
+     * Process any queued records that were somehow missed
      * This should ONLY be called on server startup!!
      */
-    public void queueAllRecords() {
-        this.enqueue(new QueueAllRecordsAction());
+    public void processQueuedRecords() {
+        getDb().enqueue(new TablePlayerLog.ProcessAllQueuedRecordsAction());
     }
 
     /**
@@ -62,11 +64,19 @@ public class PlayerDbHelper extends QueuedDatabaseRunnable {
      * This should ONLY be called on server startup!!
      */
     public void fixLogsWithNoLogout() {
-        this.enqueue(new FixLogsWithNoLogoutAction());
+        getDb().enqueue(new TablePlayerLog.FixLogsWithNoLogoutAction());
     }
 
+    /**
+     * Updates the server's last_seen timestamp
+     * This value is used for tracking player time in case the server crashes before they logout
+     */
     public void updateServerLastSeen() {
-        this.enqueue(new UpdateServerLastSeenAction());
+        getDb().enqueue(new TableServerLastSeen.UpdateServerLastSeenAction());
+    }
+
+    public void getPlayTime(CommandSender requester, String player){
+        getDb().enqueue(new TablePlayerLog.GetPlayTime(requester, player));
     }
 
 }

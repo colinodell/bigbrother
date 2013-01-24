@@ -4,6 +4,9 @@ import org.bukkit.block.Block;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
+/**
+ * Represents a block which was created, destroyed or modified by a Player
+ */
 public class BlockChange extends BlockInteraction {
     public long datePlaced;
     public String placedBy;
@@ -28,7 +31,7 @@ public class BlockChange extends BlockInteraction {
         this.dateDestroyed = 0;
     }
 
-    protected BlockChange (BlockBreakEvent event)
+    public BlockChange(BlockBreakEvent event)
     {
         this(event.getBlock());
 

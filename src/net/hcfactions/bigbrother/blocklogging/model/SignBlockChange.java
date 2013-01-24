@@ -5,6 +5,9 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.block.SignChangeEvent;
 
+/**
+ * Represents a Sign whose text was modified
+ */
 public class SignBlockChange extends BlockChange {
 
     public String[] lines;

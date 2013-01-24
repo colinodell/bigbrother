@@ -2,20 +2,21 @@ package net.hcfactions.bigbrother;
 
 import net.hcfactions.bigbrother.blocklogging.BlockDbHelper;
 import net.hcfactions.bigbrother.blocklogging.BlockEventListener;
+import net.hcfactions.bigbrother.blocklogging.DropRecorder;
+import net.hcfactions.bigbrother.commands.CmdPlaytime;
+import net.hcfactions.core.BasePlugin;
 import net.hcfactions.bigbrother.playerlogging.PlayerDbHelper;
 import net.hcfactions.bigbrother.playerlogging.PlayerEventListener;
-import net.hcfactions.bigbrother.sql.MySQLProvider;
-import net.hcfactions.bigbrother.util.LogUtils;
-import org.bukkit.plugin.java.JavaPlugin;
-import java.sql.Connection;
+import net.hcfactions.core.commands.BaseCommandManager;
+import net.hcfactions.core.commands.CommandDeclaration;
 
-import java.sql.SQLException;
-
-public class BigBrotherPlugin extends JavaPlugin {
-
-    private Connection dbconn;
+/**
+ * The core of the BigBrother plugin
+ */
+public class BigBrotherPlugin extends BasePlugin {
     private PlayerDbHelper playerDbHelper;
     private BlockDbHelper blockDbHelper;
+    private DropRecorder dropRecorder;
 
     @Override
     public void onEnable() {
@@ -25,76 +26,101 @@ public class BigBrotherPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockEventListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerEventListener(this), this);
 
-        // Start the async background threads for logging blocks and players
-        // Check for and execute queries every other tick
-        getServer().getScheduler().scheduleAsyncRepeatingTask(this, getPlayerDbHelper(), 0, 2);
-        getServer().getScheduler().scheduleAsyncRepeatingTask(this, getBlockDbHelper(), 0, 2);
-
         // In case of crash, immediately process any pending records before people join again
         getPlayerDbHelper().fixLogsWithNoLogout();
-        getPlayerDbHelper().queueAllRecords();
+        getPlayerDbHelper().processQueuedRecords();
 
         // Start the background task to update server_last_seen timestamp (delay 1 tick, run every 30 seconds)
-        getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
-            @Override
-            public void run() {
-                getPlayerDbHelper().updateServerLastSeen();
-                getPlayerDbHelper().processQueuedRecords();
-            }
-        }, 1, 20 * 30);
+        startUpdateLastSeenTask();
+
+        // Purge any ore block breaks that we couldn't connect to a player/drop
+        // This should run frequently to decrease memory usage and the potential for abuse
+        // Currently it's set to run every second (20 ticks) after a 20 tick delay
+        getServer().getScheduler().scheduleAsyncRepeatingTask(this, getDropRecorer(), 20, 20);
     }
 
     @Override
     public void onDisable() {
-        super.onDisable();
+        // Stop the background task; we'll call it manually once more though
+        stopUpdateLastSeenTask();
+        getPlayerDbHelper().updateServerLastSeen();
 
-        // Close the MySQL connection
-        try
+        // Call parent logic LAST to complete queued tasks and close the db connection
+        super.onDisable();
+    }
+
+    @Override
+    protected void onRegisterCustomCommands(BaseCommandManager manager) {
+        // All the config commands are registered in the base plugin
+        // If you need to register other commands, you would do something like: manager.register();
+        manager.register(new CommandDeclaration(CmdPlaytime.class, getBaseCommandPrefix(), "playtime", "time"));
+    }
+
+    private int updateServerLastSeenTaskId = -1;
+    private void startUpdateLastSeenTask()
+    {
+        if(updateServerLastSeenTaskId == -1)
+            updateServerLastSeenTaskId = getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+                @Override
+                public void run() {
+                    getPlayerDbHelper().updateServerLastSeen();
+                }
+            }, 1, getConfig().getInt("lastseen.frequency", 30*20));
+    }
+    private void stopUpdateLastSeenTask()
+    {
+        if(updateServerLastSeenTaskId != -1)
         {
-            getConnection().close();
-        }
-        catch (SQLException ex)
-        {
-            getLogger().warning("Failed to close MySQL connection");
-            getLogger().throwing("BigBrotherPlugin", "onDisable", ex);
+            getServer().getScheduler().cancelTask(updateServerLastSeenTaskId);
+            updateServerLastSeenTaskId = -1;
         }
     }
 
+    /**
+     * Lazy-loads the Player helper as needed.
+     * The helper will bind itself to the current db queue
+     * @return The single instance of the helper
+     */
     public PlayerDbHelper getPlayerDbHelper()
     {
         if(this.playerDbHelper == null)
         {
-            this.playerDbHelper = new PlayerDbHelper(this.getConnection(), this.getLogger());
+            this.playerDbHelper = new PlayerDbHelper(getDatabaseQueue());
         }
 
         return this.playerDbHelper;
     }
 
+    /**
+     * Lazy-loads the Block helper as needed
+     * The helper will bind itself to the current db queue
+     * @return
+     */
     public BlockDbHelper getBlockDbHelper()
     {
         if(this.blockDbHelper == null)
         {
-            this.blockDbHelper = new BlockDbHelper(this.getConnection(), this.getLogger());
+            this.blockDbHelper = new BlockDbHelper(getDatabaseQueue());
         }
 
         return this.blockDbHelper;
     }
-    
-    
-    protected Connection getConnection() {
-        if(this.dbconn == null)
+
+    public DropRecorder getDropRecorer()
+    {
+        if(this.dropRecorder == null)
         {
-            try
-            {
-                MySQLProvider.setParent(this);
-                MySQLProvider.load();
-                this.dbconn = MySQLProvider.getConnection();
-            }
-            catch (SQLException ex) {
-                getLogger().throwing("BigBrotherPlugin", "getConnection", ex);
-                getLogger().severe(ex.getMessage());
-            }
+            this.dropRecorder = new DropRecorder(this);
         }
-        return this.dbconn;
+
+        return this.dropRecorder;
+    }
+
+    @Override
+    public void reloadConfig()
+    {
+        super.reloadConfig();
+        stopUpdateLastSeenTask();
+        startUpdateLastSeenTask();
     }
 }

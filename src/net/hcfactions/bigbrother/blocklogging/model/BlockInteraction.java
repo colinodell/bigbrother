@@ -3,7 +3,10 @@ package net.hcfactions.bigbrother.blocklogging.model;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
-public abstract class BlockInteraction {
+/**
+ * Represents a block within a world
+ */
+public abstract class BlockInteraction extends BaseModel {
     public String world;
     public int xPos;
     public int yPos;

@@ -1,16 +1,20 @@
 package net.hcfactions.bigbrother.blocklogging.model;
 
 import org.bukkit.block.Block;
+import org.bukkit.block.Chest;
+import org.bukkit.block.DoubleChest;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
+/**
+ * Represents a chest block that was created or destroyed
+ */
 public class ChestBlockChange extends BlockChange{
 
     protected ChestBlockChange(Block b)
     {
         super(b);
 
-        /* I don't know if we need this, but I'm keeping the code here for reference just in case
         // Use the left side for referencing double-chests
         if(b instanceof DoubleChest)
         {
@@ -18,7 +22,7 @@ public class ChestBlockChange extends BlockChange{
             this.xPos = leftChest.getX();
             this.yPos = leftChest.getY();
             this.zPos = leftChest.getZ();
-        }*/
+        }
     }
 
     public ChestBlockChange (BlockPlaceEvent event)

@@ -1,29 +1,34 @@
 package net.hcfactions.bigbrother.blocklogging.events;
 
+import net.hcfactions.bigbrother.BigBrotherPlugin;
+import net.hcfactions.bigbrother.blocklogging.model.BaseModel;
 import net.hcfactions.bigbrother.blocklogging.model.BlockInteraction;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryEvent;
-import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.event.inventory.InventoryType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * An EventDeclaration that also filters based on the type of inventory opened
+ */
 public class InventoryEventDeclaration extends EventDeclaration {
 
-    protected List<Class<? extends InventoryHolder>> supportedHolders = new ArrayList<Class<? extends InventoryHolder>>();
+    protected List<InventoryType> supportedTypes = new ArrayList<InventoryType>();
 
-    public InventoryEventDeclaration(Class<? extends Event> eventType, Class<? extends BlockInteraction> model, Class<? extends InventoryHolder> holder)
+    public InventoryEventDeclaration(Class<? extends Event> eventType, Class<? extends BaseModel> model, InventoryType type)
     {
         super(eventType, model);
-        this.supportedHolders = new ArrayList<Class<? extends InventoryHolder>>();
-        this.supportedHolders.add(holder);
+        this.supportedTypes = new ArrayList<InventoryType>();
+        this.supportedTypes.add(type);
     }
 
-    public InventoryEventDeclaration(Class<? extends Event> eventType, Class<? extends BlockInteraction> model, Class<? extends InventoryHolder>... holders)
+    public InventoryEventDeclaration(Class<? extends Event> eventType, Class<? extends BaseModel> model, InventoryType... types)
     {
         super(eventType, model);
-        this.supportedHolders = new ArrayList<Class<? extends InventoryHolder>>(Arrays.asList(holders));
+        this.supportedTypes = new ArrayList<InventoryType>(Arrays.asList(types));
     }
 
     public boolean shouldHandleEvent(InventoryEvent e)
@@ -33,23 +38,16 @@ public class InventoryEventDeclaration extends EventDeclaration {
             return false;
 
         // If no holder types (i.e. chest) are listed, assume this applies to any/all
-        if(this.supportedHolders.size() == 0)
+        if(this.supportedTypes.size() == 0)
             return true;
 
         InventoryEvent event = (InventoryEvent)e;
 
         // This should probably never happen, but you never know with Java. If it does, abort.
-        if(event.getInventory() == null || event.getInventory().getHolder() == null)
+        if(event.getInventory() == null || event.getInventory().getType() == null)
             return false;
 
         // Check if this holder type is supported
-        for(Class<? extends InventoryHolder> cls : this.supportedHolders)
-        {
-            if(cls.isInstance(event.getInventory().getHolder()))
-                return true;
-        }
-
-        // We don't handle this type of block
-        return false;
+        return this.supportedTypes.contains(event.getInventory().getType());
     }
 }

@@ -18,12 +18,18 @@ public class PlayerEventListener implements Listener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerJoin(PlayerJoinEvent event)
     {
-        plugin.getPlayerDbHelper().recordLogin(event.getPlayer().getName(), event.getPlayer().getAddress());
+        if(event.getPlayer() == null)
+            return;
+
+        plugin.getPlayerDbHelper().recordLogin(event.getPlayer());
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerQuit(PlayerQuitEvent event)
     {
-        plugin.getPlayerDbHelper().recordLogout(event.getPlayer().getName());
+        if(event.getPlayer() == null)
+            return;
+
+        plugin.getPlayerDbHelper().recordLogout(event.getPlayer());
     }
 }
