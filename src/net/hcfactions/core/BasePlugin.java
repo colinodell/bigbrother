@@ -91,7 +91,7 @@ public abstract class BasePlugin extends JavaPlugin implements IHasLogger {
     protected void startDbQueueTask()
     {
         if(dbQueueTaskId == -1)
-            dbQueueTaskId = getServer().getScheduler().scheduleAsyncRepeatingTask(this, getDatabaseQueue(), 0, getConfig().getInt("queue.frequency", 2));
+            dbQueueTaskId = getServer().getScheduler().runTaskTimerAsynchronously(this, getDatabaseQueue(), 0, getConfig().getInt("queue.frequency", 2)).getTaskId();
     }
 
     protected void stopDbQueueTask()

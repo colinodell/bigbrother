@@ -36,7 +36,7 @@ public class BigBrotherPlugin extends BasePlugin {
         // Purge any ore block breaks that we couldn't connect to a player/drop
         // This should run frequently to decrease memory usage and the potential for abuse
         // Currently it's set to run every second (20 ticks) after a 20 tick delay
-        getServer().getScheduler().scheduleAsyncRepeatingTask(this, getDropRecorer(), 20, 20);
+        getServer().getScheduler().runTaskTimerAsynchronously(this, getDropRecorer(), 20, 20);
     }
 
     @Override
@@ -60,12 +60,12 @@ public class BigBrotherPlugin extends BasePlugin {
     private void startUpdateLastSeenTask()
     {
         if(updateServerLastSeenTaskId == -1)
-            updateServerLastSeenTaskId = getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+            updateServerLastSeenTaskId = getServer().getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
                 @Override
                 public void run() {
                     getPlayerDbHelper().updateServerLastSeen();
                 }
-            }, 1, getConfig().getInt("lastseen.frequency", 30*20));
+            }, 1, getConfig().getInt("lastseen.frequency", 30*20)).getTaskId();
     }
     private void stopUpdateLastSeenTask()
     {
