@@ -1,0 +1,25 @@
+Package structure
+
+- blocklogging				Everything related to logging blocks (signs and chests for now, maybe ores and other stuff later)
+  - events					Code that determines which block events should create which data models to log
+  - model					Models which represent info about events, like who opened a chest. They mirror the db tables.
+  - BlockDbHelper			Sits between the listener and the db, queueing actions as requested
+  - BlockEventListener		Listens for block events, uses the EventManager to decide what to do, and asks the BlockDbHelper to do it
+  - Table*					Classes which represent each db table, along with the creation code and queries
+
+- playerlogging				Everything related to logging player join/quit events and total play time
+  - PlayerDbHelper			Sits between the listener and db, queueing actions as requested
+  - PlayerEventListener		Listens for join/leave events; asks the Helper to queue db updates
+  - Table*					Classes which represent each db table, along with the creation code and queries
+  
+- sql						Base classes for interacting with the database
+  - action					Base classes which represent different type of actions/queries
+  - DbHelper				Base class for the two db helpers; binds the helper to the queue
+  - MySQLConfiguration		Deals with db config
+  - MySQLProvider			Helps you obtain a connection
+  - QueuedDatabaseRunnable  The queue which runs in the background, executing queries. Must provide it with the connection to use
+  
+- util						A place to keep helpful util classes
+  - LogUtils				Contains a method to convert a stack trace to a multi-line string
+  
+- BigBrotherPlugin			Heart of the plugin. It schedules tasks and provides a single instance for the queue, db connection, and one of each helper

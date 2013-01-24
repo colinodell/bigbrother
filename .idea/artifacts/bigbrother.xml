@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="bigbrother">
+    <output-path>$PROJECT_DIR$/bin/</output-path>
+    <root id="archive" name="bigbrother.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/dbconfig.yaml" />
+      <element id="module-output" name="bigbrother" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
+    </root>
+  </artifact>
+</component>

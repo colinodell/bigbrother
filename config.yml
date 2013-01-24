@@ -1,0 +1,7 @@
+queue:
+  frequency: 2
+  maxitems: 10
+  warnlevel: 100
+  errorlevel: 500
+lastseen:
+  frequency: 600
